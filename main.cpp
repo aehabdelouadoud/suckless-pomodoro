@@ -1,14 +1,17 @@
 //NOTE: icons:   
 
 #include <cstdio>
+#include <cstdlib>
 #include <iomanip>
 #include <iostream>
 #include <chrono>
 #include <ostream>
+#include <sstream>
 #include <thread>
 #include <csignal>
 #include <SFML/Audio.hpp>
 #include <termios.h>
+#include <strstream>
 
 
 auto disable_keyboard_input() -> void;
@@ -63,8 +66,11 @@ auto signal_handler(int signum) -> void {
 auto play_reminder() -> void {
   sf::Sound sound;
   sf::SoundBuffer buffer;
+  std::stringstream buffer_path;
 
-  buffer.loadFromFile("/home/x_user/lab/cdoro/sounds/bell.mp3");
+  buffer_path << getenv("HOME") << "/.cdoro/bell.mp3";
+
+  buffer.loadFromFile(buffer_path.str());
   sound.setBuffer(buffer);
   sound.play();
   sound.setRelativeToListener(true);

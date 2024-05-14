@@ -17,4 +17,4 @@ install: cdoro
 	sudo cp -r cdoro /usr/local/bin/
 	sudo chmod +x /usr/local/bin/cdoro
 	mkdir $(HOME)/.cdoro
-	mv ./bell.mp3 $(HOME)/.cdoro/
+	cp -r ./bell.mp3 $(HOME)/.cdoro/
