@@ -13,9 +13,13 @@ cdoro Pomodoro is a simple and efficient Pomodoro timer written in C++. The Pomo
 
 ## Requirements
 
-- g++
-- sfml library for audio
-- notify-send
+- C++ compiler
+  - g++
+  - clang 
+- Libraries
+  - sfml
+- Notifications
+  - notify-send
 
 ## Installation
 
