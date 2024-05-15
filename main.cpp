@@ -1,5 +1,3 @@
-//NOTE: icons:   
-
 #include <cstdio>
 #include <cstdlib>
 #include <iomanip>
@@ -11,11 +9,7 @@
 #include <csignal>
 #include <SFML/Audio.hpp>
 #include <termios.h>
-#include <strstream>
 
-
-auto disable_keyboard_input() -> void;
-auto enable_keyboard_input() -> void;
 auto set_term_settings() -> void;
 auto cdoro() -> void;
 auto short_break(size_t duration) -> void;
@@ -27,30 +21,10 @@ int main() {
   cdoro();
 }
 
-void disable_keyboard_input() {
-  struct termios term;
-  tcgetattr(STDIN_FILENO, &term);
-  term.c_lflag &= ~(ICANON | ECHO);  // Disable canonical mode and echoing
-  tcsetattr(STDIN_FILENO, TCSANOW, &term);
-  // Flush input buffer
-  tcflush(STDIN_FILENO, TCIFLUSH);
-}
-
-void enable_keyboard_input() {
-  struct termios term;
-  tcgetattr(STDIN_FILENO, &term);
-  term.c_lflag |= (ICANON | ECHO);  // Re-enable canonical mode and echoing
-  tcsetattr(STDIN_FILENO, TCSANOW, &term);
-}
-
-// Terminal
-
 auto set_term_settings() -> void {
   std::cout << "\e[?25l"; // Hide cursor.
-  disable_keyboard_input();
 }
 auto dis_term_settings() -> void {
-  enable_keyboard_input();
   // Restore cursor visibility before exiting
   std::cout << "\e[?25h" << std::flush;
 }
@@ -59,7 +33,6 @@ auto dis_term_settings() -> void {
 auto signal_handler(int signum) -> void {
   // Restore cursor visibility before exiting
   std::cout << "\e[?25h" << std::endl;
-  enable_keyboard_input();
   exit(signum);
 }
 
