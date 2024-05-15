@@ -36,3 +36,9 @@ cdoro Pomodoro is a simple and efficient Pomodoro timer written in C++. The Pomo
     ```bash
     make install
     ```
+
+## Usage
+
+Run the compiled executable:
+```bash
+cdoro
