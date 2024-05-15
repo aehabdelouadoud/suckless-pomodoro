@@ -113,9 +113,9 @@ auto cycle(size_t session_duration, size_t number_of_ss) -> void {
     system("notify-send \"a session ended\"");
     play_reminder();
     if (session_id != number_of_ss)
-      short_break(1);
+      short_break(5);
     else
-      long_break(1);
+      long_break(25);
   }
   dis_term_settings();
 }
@@ -182,7 +182,7 @@ auto cdoro() -> void {
   while (1) {
     system("clear");
     std::cout << "➜ cdoro ]" << cycle_id << ";+ [" << std::endl;
-    cycle(1, 4);
+    cycle(25, 4);
     ++cycle_id;
   }
   dis_term_settings();
