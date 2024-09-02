@@ -4,6 +4,7 @@
 > traditionally 25 minutes in length, separated by short breaks.
 
 ![image](https://github.com/horanmustaplot/cdoro-pomodoro/assets/152083466/01c7afca-586e-414b-b994-6de22950efb7)
+<img src="https://github.com/horanmustaplot/cdoro-pomodoro/assets/152083466/01c7afca-586e-414b-b994-6de22950efb7" align="middle" />
 
 ## Requirements
 
