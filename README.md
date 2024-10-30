@@ -1,6 +1,6 @@
 # Suckless Pomodoro
 
-> cdoro Pomodoro is a simple and efficient Pomodoro timer written in C++.
+> Suckless Pomodoro is a simple and efficient Pomodoro timer written in C++.
 > The Pomodoro Technique is a time management method that uses a timer to break work into intervals,
 > traditionally 25 minutes in length, separated by short breaks.
 
